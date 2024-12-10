@@ -9,6 +9,8 @@ use App\Http\Controllers\Admin\MasterData\CategoriesController;
 use App\Http\Controllers\Admin\MasterData\FasilitasController;
 use App\Http\Controllers\Admin\MasterData\KostController;
 use App\Http\Controllers\Admin\MasterData\PenyewaanController;
+use App\Models\Customer;
+use App\Models\Kost;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +23,9 @@ use App\Http\Controllers\Admin\MasterData\PenyewaanController;
 |
 */
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+        'kosts'=> Kost::all()
+    ]);
 });
 
 
